@@ -173,7 +173,7 @@ onBeforeUnmount(stopCamera);
 
 <template>
   <main class="app-shell" :style="selectedAreaStyle">
-    <button v-if="screen !== 'home'" class="home-button" type="button" @click="goHome">
+    <button v-if="screen !== 'home' && screen !== 'question'" class="home-button" type="button" @click="goHome">
       Inizio
     </button>
 
@@ -236,6 +236,10 @@ onBeforeUnmount(stopCamera);
     </section>
 
     <section v-else-if="screen === 'question'" class="screen question-screen">
+      <button class="home-button" type="button" @click="towerFell">
+        Fine
+      </button>
+
       <div
         class="question-band"
         role="button"
